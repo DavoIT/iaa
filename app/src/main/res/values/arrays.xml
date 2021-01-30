@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="locations">
+        <item>AK-ANCHORAGE</item>
+        <item>AL-BIRMINGHAM</item>
+        <item>AL-DOTHAN</item>
+        <item>AL-HUNTSVILLE</item>
+        <item>AL-MOBILE</item>
+        <item>AL-MONTGOMERY</item>
+        <item>AL-TANNER</item>
+        <item>AR-FAYETTEVILLE</item>
+        <item>AR-LITTLE ROCK</item>
+        <item>AZ-PHOENIX</item>
+        <item>AZ-TUCSON</item>
+        <item>CA- ACE Carson</item>
+        <item>CA- ACE Perris</item>
+        <item>CA-ANAHEIM</item>
+        <item>CA-ANTELOPE</item>
+        <item>CA-BAKERSFIELD</item>
+        <item>CA-COLTON</item>
+        <item>CA-EAST BAY</item>
+        <item>CA-FONTANA</item>
+        <item>CA-FREMONT</item>
+        <item>CA-FRESNO</item>
+        <item>CA-HAYWARD</item>
+        <item>CA-HAYWARD DESERT VIEW</item>
+        <item>CA-HIGH DESERT</item>
+        <item>CA-LONG BEACH</item>
+        <item>CA-LOS ANGELES</item>
+        <item>CA-MARTINEZ</item>
+        <item>CA-NORTH HOLLYWOOD</item>
+        <item>CA-RANCHO CUCAMONGA</item>
+        <item>CA-RANCHO-DESERT VIEW</item>
+        <item>CA-RIVERSIDE</item>
+        <item>CA-SACRAMENTO</item>
+        <item>CA-SACRAMENTO-DESERT VIEW</item>
+        <item>CA-SAN BERNARDINO</item>
+        <item>CA-SAN DIEGO</item>
+        <item>CA-SAN DIEGO-DESERT VIEW</item>
+        <item>CA-SAN JOSE</item>
+        <item>CA-SANTA PAULA-DESERT VIEW</item>
+        <item>CA-SO SACRAMENTO</item>
+        <item>CA-SUN VALLEY</item>
+        <item>CA-VALLEJO</item>
+        <item>CA-VAN NUYS</item>
+        <item>CO-COLORADO SPRINGS</item>
+        <item>CO-DENVER</item>
+        <item>CO-DENVER CENTRAL</item>
+        <item>CO-DENVER EAST</item>
+        <item>CO-DENVER SOUTH</item>
+        <item>CO-WESTERN COLORADO</item>
+        <item>CT-HARTFORD</item>
+        <item>CT-Hartford-South</item>
+        <item>DC-WASHINGTON DC-MD</item>
+        <item>DE-NEW CASTLE</item>
+        <item>DE-SEAFORD</item>
+        <item>FL-CAT Jacksonville Sub lot</item>
+        <item>FL-CAT Orlando Boggy Creek</item>
+        <item>FL-CLEARWATER</item>
+        <item>FL-Dover Sublot</item>
+        <item>FL-FORT MYERS</item>
+        <item>FL-FORT PIERCE</item>
+        <item>FL-FT.PIERCE</item>
+        <item>FL-JACKSONVILLE</item>
+        <item>FL-JACKSONVILLE EAST</item>
+        <item>FL-JACKSONVILLE WEST</item>
+        <item>FL-MIAMI</item>
+        <item>FL-MIAMI CENTRAL</item>
+        <item>FL-MIAMI NORTH</item>
+        <item>FL-MIAMI SOUTH</item>
+        <item>FL-OCALA</item>
+        <item>FL-ORLANDO</item>
+        <item>FL-ORLANDO NORTH</item>
+        <item>FL-PENSACOLA</item>
+        <item>FL-PUNTA GORDA</item>
+        <item>FL-TALLAHASSEE</item>
+        <item>FL-TAMPA SOUTH</item>
+        <item>FL-WEST PALM BEACH</item>
+        <item>GA-ATLANTA EAST</item>
+        <item>GA-ATLANTA NORTH</item>
+        <item>GA-ATLANTA SOUTH</item>
+        <item>GA-ATLANTA WEST</item>
+        <item>GA-CARTERSVILLE</item>
+        <item>GA-MACON</item>
+        <item>GA-SAVANNAH</item>
+        <item>GA-TIFTON</item>
+        <item>HI-HONOLULU</item>
+        <item>IA-Crashedtoys Eldridge</item>
+        <item>IA-DAVENPORT</item>
+        <item>IA-DES MOINES</item>
+        <item>ID-BOISE</item>
+        <item>IL-CHICAGO NORTH</item>
+        <item>IL-CHICAGO SOUTH</item>
+        <item>IL-CHICAGO WEST</item>
+        <item>IL-LINCOLN</item>
+        <item>IL-PEORIA</item>
+        <item>IL-SOUTHERN ILLINOIS</item>
+        <item>IL-SPECIALTY DIVISION</item>
+        <item>IL-ST. LOUIS</item>
+        <item>IL-WHEELING</item>
+        <item>IN-IAA Indy Minnesota Street Sublot</item>
+        <item>IN-FORT WAYNE</item>
+        <item>IN-HAMMOND</item>
+    </string-array>
+</resources>
