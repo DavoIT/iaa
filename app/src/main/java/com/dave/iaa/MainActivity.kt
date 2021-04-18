@@ -1,7 +1,6 @@
 package com.dave.iaa
 
 import android.os.Bundle
-import android.os.Handler
 import android.transition.TransitionManager
 import android.view.View
 import android.view.ViewGroup
@@ -9,9 +8,10 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         R.string.vehicle4
     )
 
-    private lateinit var locationSpinner: Spinner
+    private lateinit var locationText: TextView
     private lateinit var ageSpinner: Spinner
     private lateinit var fuelTypeSpinner: Spinner
     private lateinit var vehicleTypeSpinner: Spinner
@@ -45,6 +45,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var auctionOtherButton: View
     private lateinit var auctionOtherEditText: EditText
 
+    private lateinit var arrayOfPlaces: ArrayList<Place>
+    private var selectedLocation: MutableLiveData<Place> = MutableLiveData()
+    private val selectedLocationObserver: Observer<Place> = Observer {
+        locationText.text = it.name
+        Toast.makeText(this, it.motorcyclePrice.toString(), Toast.LENGTH_SHORT).show()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -53,7 +60,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun init() {
-        locationSpinner = findViewById(R.id.locationSpinner)
+        locationText = findViewById(R.id.locationText)
         ageSpinner = findViewById(R.id.ageSpinner)
         fuelTypeSpinner = findViewById(R.id.fuelSpinner)
         vehicleTypeSpinner = findViewById(R.id.vehicleTypeSpinner)
@@ -65,10 +72,18 @@ class MainActivity : AppCompatActivity() {
         auctionOtherEditText = findViewById(R.id.auctionOtherEditText)
 
         makeBackgroundBlurred()
-        setupLocationSpinner()
+        setupPlaces()
         setupSpinnerUsingResIds(ageSpinner, agesListResIds)
         setupSpinnerUsingResIds(fuelTypeSpinner, fuelTypesListResIds)
         setupSpinnerUsingResIds(vehicleTypeSpinner, vehicleTypesListResIds)
+
+        locationText.setOnClickListener {
+            ActivityUtils.showStringListDialog(this, arrayOfPlaces, itemPicked = {
+                selectedLocation.value = it
+                Toast.makeText(this, it.motorcyclePrice.toString(), Toast.LENGTH_SHORT).show()
+            })
+        }
+        selectedLocation.observe(this, selectedLocationObserver)
     }
 
     private fun setListeners() {
@@ -77,11 +92,29 @@ class MainActivity : AppCompatActivity() {
         auctionOtherButton.setOnClickListener { pressedAuction(2) }
     }
 
-    private fun setupLocationSpinner() {
-        val items = resources.getStringArray(R.array.locations)
-        val adapter = ArrayAdapter(this, R.layout.simple_dropdown_item, items)
-        adapter.setDropDownViewResource(R.layout.simple_dropdown_item)
-        locationSpinner.adapter = adapter
+    private fun setupPlaces() {
+        val locationNames = resources.getStringArray(R.array.locations)
+        val suvPrices = resources.getIntArray(R.array.suv_prices)
+        val sedanPrices = resources.getIntArray(R.array.sedan_prices)
+        val pickupPrices = resources.getIntArray(R.array.pickup_prices)
+        val motorcyclePrices = resources.getIntArray(R.array.motorcycle_prices)
+
+        arrayOfPlaces = arrayListOf()
+        for (i in locationNames.indices) {
+            val placeName = locationNames[i]
+            val suvPrice = suvPrices[i]
+            val sedanPrice = sedanPrices[i]
+            val pickupPrice = pickupPrices[i]
+            val motorcyclePrice = motorcyclePrices[i]
+            val place = Place(
+                placeName,
+                sedanPrice.toDouble(),
+                suvPrice.toDouble(),
+                pickupPrice.toDouble(),
+                motorcyclePrice.toDouble()
+            )
+            arrayOfPlaces.add(place)
+        }
     }
 
     private fun setupSpinnerUsingResIds(spinner: Spinner, resIds: Array<Int>) {
